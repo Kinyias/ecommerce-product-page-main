@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+  <header>
+    <div class="menu">
+      <div class="menu-left">
+        <div class="menu-left-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+        <div class="menu-left-logo">
+          <img src="./images/logo.svg" alt="logo">
+        </div>
+        <nav>
+          <div class="navigation">
+            <div class="close"><img src="./images/icon-close.svg"></div>
+            <ul>
+              <a href="#">
+                <li>Collections</li>
+              </a>
+              <a href="#">
+                <li>Men</li>
+              </a>
+              <a href="#">
+                <li>Women</li>
+              </a>
+              <a href="#">
+                <li>About</li>
+              </a>
+              <a href="#">
+                <li>Contact</li>
+              </a>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="menu-right">
+        <div class="menu-right-cart">
+          <img src="./images/icon-cart.svg" alt="cart">
+          <div class="menu-right-cart-count hidden">3</div>
+        </div>
+          <div class="menu-right-avatar">
+            <img src="./images/image-avatar.png" alt="avatar">
+          </div>
+      </div>
+    </div>
+    <div class="cart-wrapper hidden">
+      <div class="cart-header">Cart</div>
+      <div class="available-product hidden">
+        <div class="product-in-cart">
+          <!-- <div class="item">
+            <div class="detail-wrapper">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="prodcut 1 thumbnail">
+              <div class="detail">
+                <div class="product-name">Autumn Limited Edition...</div>
+                <div class="price-group">
+                  <div class="price">$125.00</div>x
+                  <div class="count">3</div>
+                  <div class="total-amount">$375.00</div>
+                </div>
+            </div>
+            </div>
+            <div class="delete"><img src="./images/icon-delete.svg" alt="delete"></div>
+          </div> -->
+        </div>
+        <button class="checkout">Checkout</button>
+      </div>
+      <div class="cart-empty">Your cart is empty</div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="wrapper">
+        <section class="lightbox">
+          <div class="product-hero active">
+            <img src="./images/image-product-1.jpg" alt="product">
+          </div>
+          <div class="product-hero">
+            <img src="./images/image-product-2.jpg" alt="product">
+          </div>
+          <div class="product-hero">
+            <img src="./images/image-product-3.jpg" alt="product">
+          </div>
+          <div class="product-hero">
+            <img src="./images/image-product-4.jpg" alt="product">
+          </div>
+          <div class="previous arrow"><img src="./images/icon-previous.svg"></div>
+          <div class="next arrow" ><img src="./images/icon-next.svg"></div>
+          <div class="thumb-gallery">
+            <div onclick="currentSlide(1)" class="pic active">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="product">
+            </div>
+            <div onclick="currentSlide(2)" class="pic">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="product">
+            </div>
+            <div onclick="currentSlide(3)" class="pic">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="product">
+            </div>
+            <div onclick="currentSlide(4)" class="pic">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="product">
+            </div>
+          </div>
+          <div class="modal-overlay hidden">
+            <div class="modal">
+              <div class="close-modal"><img src="./images/icon-close.svg" alt="close"></div>
+              <div class="lightbox-modal">
+                <div class="product-hero-modal active">
+                  <img src="./images/image-product-1.jpg" alt="product">
+                </div>
+                <div class="product-hero-modal">
+                  <img src="./images/image-product-2.jpg" alt="product">
+                </div>
+                <div class="product-hero-modal">
+                  <img src="./images/image-product-3.jpg" alt="product">
+                </div>
+                <div class="product-hero-modal">
+                  <img src="./images/image-product-4.jpg" alt="product">
+                </div>
+                <div class="previous arrow"><img src="./images/icon-previous.svg"></div>
+                <div class="next arrow" ><img src="./images/icon-next.svg"></div>
+              </div>
+              <div class="thumb-gallery">
+                <div class="pic-modal active">
+                  <img src="./images/image-product-1-thumbnail.jpg" alt="product">
+                </div>
+                <div class="pic-modal">
+                  <img src="./images/image-product-2-thumbnail.jpg" alt="product">
+                </div>
+                <div class="pic-modal">
+                  <img src="./images/image-product-3-thumbnail.jpg" alt="product">
+                </div>
+                <div class="pic-modal">
+                  <img src="./images/image-product-4-thumbnail.jpg" alt="product">
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class="product-content">
+          <div class="company-name">Sneaker Company</div>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="product-price">
+            <div class="group-price">
+              <div class="price">$125.00</div>
+              <div class="discount">50%</div>
+            </div>
+            <div class="old-price">$250.00</div>
+          </div>
+          <div class="product-counter">
+            <div class="counter-wrapper">
+              <div class="minus"><img src="./images/icon-minus.svg" alt="minus"></div>
+              <div class="counter">1</div>
+              <div class="plus"><img src="./images/icon-plus.svg" alt="plus"></div>
+            </div>
+            <button class="btn">
+              <div class="btn-cart"><img src="./images/icon-cart.svg" alt="cart"></div>
+               Add to cart
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+.product-content{
+    padding: 2.5rem;
+    .company-name{
+        color: $Orange;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.4rem;
+        letter-spacing: .2rem;
+    }
+    h1{
+        margin: 2rem 0;
+        font-size: 3.2rem;
+    }
+    p{
+        color: $Dark-grayish-blue;
+        font-size: 1.7rem;
+        line-height: 2.6rem;
+    }
+    .product-price{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4rem;
+        .group-price{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            .price{
+                font-size: 3.5rem;
+                font-weight: 700;
+            }
+            .discount{
+                background-color: $Pale-orange;
+                color: $Orange;
+                font-size: 2rem;
+                font-weight: 700;
+                padding: 0.4rem 1rem;
+                border-radius: 10px;
+            }
+        }
+        .old-price{
+            color: $Grayish-blue;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: line-through;
+        }
+    }
+    .product-counter{
+        .counter-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $Light-grayish-blue;
+            padding: 2rem 3rem;
+            margin-top: 2.5rem;
+            border-radius: 1rem;
+            .counter{
+                font-weight: 700;
+                font-size: 1.8rem;
+            }
+            .minus,
+            .plus{
+                cursor: pointer;
+                padding: 1rem;
+            }
+        }
+        .btn{
+            background-color: $Orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: $White;
+            border-radius: 1rem;
+            cursor: pointer;
+            img{
+                filter: brightness(300%);
+                height: 1.7rem;
+            }
+        }
+    }
+}
+@media (min-width:1023px) {
+    .product-content{
+        margin-left: 15rem;
+        h1{
+            font-size: 6rem;
+        }
+        .product-price{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            .group-price{
+                .price{
+                    font-size: 3rem;
+                }
+            }
+        }
+        .product-counter{
+            display: flex;
+            justify-content: space-between;
+            .counter-wrapper{
+                width: 35%;
+            }
+            .btn{
+                width: 60%;
+                font-size: 1.8rem;
+                box-shadow: $Orange 0px 8px 24px;
+                img{
+                    height: 1.8rem;
+                }
+                &:hover{
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}

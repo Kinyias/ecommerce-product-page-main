@@ -1,0 +1,181 @@
+.lightbox{
+    position: relative;
+    .product-hero{
+        display: none;
+        img{
+            width: 100%;
+        }
+    }
+    .active{
+        display: block;
+    }
+    
+    .previous{
+        left: 4%;
+        &:hover{
+            left: 3%;
+        }
+    }
+    .next{
+        right: 4%;
+        &:hover{
+            right: 3%;
+        }
+    }
+    .arrow{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $White;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 999px;
+        transition: .3s ease;
+        cursor: pointer;
+    }
+    .thumb-gallery{
+        display: none;
+    }
+}
+@media (min-width:1023px) {
+    .wrapper{
+        display: flex;
+        margin-top: 10rem;
+        align-items: center;
+    }
+    .lightbox{
+        .product-hero{
+            img{
+                max-width: 55rem;
+                width: 100%;
+                border-radius: 2rem;
+            }
+        }
+        .arrow{
+            display: none;
+        }
+        .thumb-gallery{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            .pic{
+                width: 20%;
+                height: fit-content;
+                overflow: hidden;
+                border-radius: 1rem;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    display: block;
+                    transition: .3s;
+                    &:hover{
+                        opacity: .75;
+                    }
+                }
+            }
+            .active{
+                border: 3px solid $Orange;
+                img{
+                    opacity: .5;
+                    &:hover{
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+        .modal-overlay{
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 100;
+            .modal{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 60rem;
+                .lightbox-modal{
+                    position: relative;
+                }
+                .close-modal{
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 3rem;
+                    cursor: pointer;
+                    img{
+                        width: 2.5rem;
+                        &:hover{
+                            filter: invert(69%) sepia(88%) saturate(3421%) hue-rotate(344deg) brightness(150%) contrast(107%);
+                        }                       
+                    }
+                }
+                .product-hero-modal{
+                    display: none;
+                    img{
+                        max-width: 60rem;
+                    }
+                }
+                .active{
+                    display: block;
+                }
+                .arrow{
+                    display: flex;
+                    position: absolute;
+                    &:hover{
+                        img{
+                            filter: invert(69%) sepia(88%) saturate(3421%) hue-rotate(344deg) brightness(98%) contrast(107%);
+                        }
+                    }
+                }
+                .previous{
+                    left: 0;
+                    transform: translateX(-50%);
+                }
+                .next{
+                    right: 0;
+                    transform: translateX(50%);
+                }
+                .thumb-gallery{
+                    justify-content: center;
+                    .pic-modal{
+                        width: 15%;
+                        margin: 0 1.5rem;
+                        height: fit-content;
+                        overflow: hidden;
+                        border-radius: 1rem;
+                        cursor: pointer;
+                        img{
+                            width: 100%;
+                            display: block;
+                            transition: .3s;
+                            &:hover{
+                                opacity: .75;
+                            }
+                        }
+                    }
+                    .active{
+                        border: 3px solid $Orange;
+                        img{
+                            opacity: .5;
+                            &:hover{
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .hidden{
+            display: none;
+        }
+    }
+}
